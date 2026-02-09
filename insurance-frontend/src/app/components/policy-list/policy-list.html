@@ -1,0 +1,49 @@
+<div class="policy-grid">
+
+  <div class="policy-card" *ngFor="let p of policies">
+
+    <!-- HEADER -->
+    <div class="policy-top">
+      <div>
+        <h3 class="policy-name">{{ p.policyName }}</h3>
+        <span class="policy-type">Policy</span>
+      </div>
+
+      <span class="policy-id">ID #{{ p.policyId }}</span>
+    </div>
+
+    <!-- DETAILS GRID -->
+    <div class="policy-details">
+
+      <div class="detail">
+        <label>Policy ID</label>
+        <strong>{{ p.policyId }}</strong>
+      </div>
+
+      <div class="detail">
+        <label>Premium Amount</label>
+        <strong>₹ {{ p.premiumAmount }}</strong>
+      </div>
+
+      <div class="detail">
+        <label>Duration</label>
+        <strong>{{ p.duration }} Years</strong>
+      </div>
+
+    </div>
+
+    <!-- DESCRIPTION -->
+    <div class="policy-desc">
+      <label>Description</label>
+      <p>{{ p.description || 'No description provided' }}</p>
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="policy-actions">
+      <button *ngIf="isAdmin" class="btn delete">Delete</button>
+      <button *ngIf="!isAdmin" class="btn apply">Apply Policy</button>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,41 @@
+<!-- HEADER -->
+<div class="dashboard-header">
+  <div class="left">
+    <div class="avatar" (click)="toggleProfile()">👤</div>
+    <h3>Hi, {{ username }}</h3>
+  </div>
+
+  <button class="logout-btn" (click)="logout()">Logout</button>
+</div>
+
+<!-- CARDS -->
+<div class="card-grid">
+  <div class="nav-card" (click)="openBox('ALL')">
+    📄
+    <h4>All Policies</h4>
+    <p>Browse & apply</p>
+  </div>
+
+  <div class="nav-card" (click)="openBox('REQUESTED')">
+    ⏳
+    <h4>Requested Policies</h4>
+    <p>Waiting approval</p>
+  </div>
+
+  <div class="nav-card" (click)="openBox('MY')">
+    ✅
+    <h4>My Policies</h4>
+    <p>Your policies</p>
+  </div>
+</div>
+
+<!-- PROFILE (show/hide, do NOT destroy) -->
+<div class="content-area" [hidden]="activeView !== 'PROFILE'">
+  <app-customer-profile></app-customer-profile>
+</div>
+
+<!-- POLICIES -->
+<div class="content-area"
+     [hidden]="activeView !== 'ALL' && activeView !== 'REQUESTED' && activeView !== 'MY'">
+  <app-customer-policies [view]="policyView"></app-customer-policies>
+</div>

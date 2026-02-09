@@ -1,0 +1,52 @@
+<!-- Loading -->
+<div *ngIf="loading" class="loading">
+  <div class="spinner"></div>
+  <p>Loading profile...</p>
+</div>
+
+<!-- Error -->
+<div *ngIf="!loading && error" class="error-card">
+  ⚠️ {{ error }}
+</div>
+
+<!-- Profile Details -->
+<div *ngIf="!loading && customer" class="profile-card">
+
+  <h2>My Profile</h2>
+
+  <div class="profile-row">
+    <span>Customer ID</span>
+    <strong>{{ customer.customerId }}</strong>
+  </div>
+
+  <div class="profile-row">
+    <span>Username</span>
+    <strong>{{ customer.username }}</strong>
+  </div>
+
+  <div class="profile-row">
+    <span>Name</span>
+    <strong class="highlight">{{ customer.name }}</strong>
+  </div>
+
+  <div class="profile-row">
+    <span>Email</span>
+    <strong>{{ customer.email }}</strong>
+  </div>
+
+  <div class="profile-row">
+    <span>Phone</span>
+    <strong>{{ customer.phone }}</strong>
+  </div>
+
+  <div class="profile-row">
+    <span>Date of Birth</span>
+    <strong>{{ customer.dob | date:'dd MMM yyyy' }}</strong>
+  </div>
+
+  <div class="profile-row">
+    <span>Address</span>
+    <strong>{{ customer.address }}</strong>
+  </div>
+
+</div>

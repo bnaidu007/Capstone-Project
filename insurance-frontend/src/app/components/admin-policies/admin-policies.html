@@ -1,0 +1,66 @@
+<div class="admin-page">
+
+  <h2 class="page-title">All Policies</h2>
+
+  <!-- SEARCH -->
+  <input
+    type="text"
+    class="search-box"
+    placeholder="🔍 Search by policy name or type"
+    [(ngModel)]="searchText"
+    (input)="searchPolicies()"
+  />
+
+  <!-- STATUS -->
+  <p class="loading" *ngIf="loading">Loading policies...</p>
+  <p class="error" *ngIf="error">{{ error }}</p>
+  <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
+
+  <!-- NO DATA -->
+  <p class="empty" *ngIf="!loading && !policies.length">
+    No policies found
+  </p>
+
+  <!-- POLICY LIST -->
+  <div class="policy-list" *ngIf="!loading && policies.length">
+
+    <div class="policy-card" *ngFor="let p of policies">
+
+      <!-- 🔥 HEADER UPDATED -->
+      <div class="policy-header">
+        <h3>{{ p.policyName }}</h3>
+
+        <div class="header-right">
+          <span class="policy-id">POLICY-ID #{{ p.policyId }}</span>
+          <span class="policy-type">{{ p.policyType }}</span>
+        </div>
+      </div>
+
+      <div class="policy-details">
+        <div>
+          <label>Premium</label>
+          <strong>₹ {{ p.premiumAmount }}</strong>
+        </div>
+
+        <div>
+          <label>Duration</label>
+          <strong>{{ p.duration }} years</strong>
+        </div>
+      </div>
+
+      <p class="policy-desc">
+        {{ p.description || 'No description available' }}
+      </p>
+
+      <!-- DELETE BUTTON -->
+      <button
+        class="delete-btn"
+        (click)="deletePolicy(p.policyId)">
+        Delete Policy
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

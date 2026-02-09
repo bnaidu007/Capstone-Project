@@ -1,0 +1,77 @@
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: #fff;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  background: #eae6ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.avatar:hover {
+  background: #d6ceff;
+}
+
+.logout-btn {
+  background: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 40px;
+}
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;   /* FIX */
+  gap: 10px;
+  flex-wrap: wrap;           /* FIX */
+}
+
+
+.nav-card {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.nav-card:hover {
+  transform: translateY(-5px);
+}
+
+.nav-card h4 {
+  margin-top: 10px;
+}
+
+.nav-card p {
+  color: #777;
+}
+
+.content-area {
+  padding: 20px 40px;
+}

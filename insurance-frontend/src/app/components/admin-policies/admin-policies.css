@@ -1,0 +1,193 @@
+/* PAGE */
+.admin-page {
+  padding: 20px;
+  background: #f5f7fb;
+  min-height: 100vh;
+}
+
+/* TITLE */
+.page-title {
+  text-align: center;
+  margin-bottom: 16px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* SEARCH */
+.search-box {
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  margin: 0 auto 20px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* STATUS */
+.loading,
+.error,
+.success,
+.empty {
+  text-align: center;
+  margin-top: 14px;
+  font-size: 14px;
+}
+
+.loading {
+  color: #555;
+}
+
+.error {
+  color: #d93025;
+}
+
+.success {
+  color: #1e8e3e;
+}
+
+.empty {
+  color: #777;
+}
+
+/* POLICY LIST (STACKED) */
+.policy-list {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* POLICY CARD */
+.policy-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* HEADER */
+.policy-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.policy-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.policy-id {
+  font-size: 12px;
+  color: #777;
+}
+
+/* DETAILS */
+.policy-details {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 10px;
+}
+
+.policy-details label {
+  font-size: 12px;
+  color: #666;
+}
+
+.policy-details strong {
+  display: block;
+  font-size: 14px;
+  color: #000;
+}
+
+/* DESCRIPTION */
+.policy-desc {
+  font-size: 13px;
+  color: #444;
+  line-height: 1.4;
+}
+/* Policy ID badge */
+.policy-id {
+  font-size: 11px;
+  font-weight: 600;
+  color: #2d6cdf;
+  background: #eef3ff;
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+/* Optional: subtle hover polish */
+.policy-card:hover .policy-id {
+  background: #e0eaff;
+}
+/* Delete policy button */
+.delete-btn {
+  margin-top: 12px;
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  background: #d93025;
+  color: #ffffff;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: #b3261e;
+}
+/* Header layout fix */
+.policy-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.policy-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  flex: 1;
+  min-width: 0;
+  word-break: break-word;
+}
+
+/* Right side badges */
+.header-right {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Policy ID badge */
+.policy-id {
+  font-size: 11px;
+  font-weight: 600;
+  color: #2d6cdf;
+  background: #eef3ff;
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+/* Policy Type badge */
+.policy-type {
+  font-size: 11px;
+  font-weight: 600;
+  color: #5f6368;
+  background: #eef1f4;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+

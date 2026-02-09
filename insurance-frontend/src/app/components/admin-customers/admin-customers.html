@@ -1,0 +1,45 @@
+<div class="admin-page">
+
+  <h2 class="page-title">All Customers</h2>
+
+  <!--  SEARCH -->
+  <input
+    type="text"
+    class="search-box"
+    placeholder="🔍 Search by username, name or email"
+    [(ngModel)]="searchText"
+    (input)="searchCustomers()"
+  />
+
+  <!-- STATUS -->
+  <p class="loading" *ngIf="loading">Loading customers...</p>
+  <p class="error" *ngIf="error">{{ error }}</p>
+
+  <!-- CUSTOMER LIST -->
+  <div class="customer-list" *ngIf="!loading && customers.length">
+
+    <div class="customer-card" *ngFor="let c of customers">
+
+      <div class="customer-header">
+        <h3>{{ c.name }}</h3>
+        <span class="cid">CUSTOMER-ID #{{ c.customerId }}</span>
+      </div>
+
+      <div class="customer-info">
+        <p><b>Username:</b> {{ c.username }}</p>
+        <p><b>Email:</b> {{ c.email }}</p>
+        <p><b>Phone:</b> {{ c.phone }}</p>
+        <p><b>DOB:</b> {{ c.dob | date:'dd MMM yyyy' }}</p>
+        <p><b>Address:</b> {{ c.address }}</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- EMPTY -->
+  <p class="empty" *ngIf="!loading && !customers.length">
+    No customers found
+  </p>
+
+</div>

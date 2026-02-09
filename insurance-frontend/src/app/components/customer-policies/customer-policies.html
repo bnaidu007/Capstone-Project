@@ -1,0 +1,134 @@
+<div class="customer-policies-page">
+
+  <!-- PAGE TITLE -->
+  <h2 class="page-title">
+    {{
+      view === 'ALL' ? 'All Policies' :
+      view === 'REQUESTED' ? 'Requested Policies' :
+      'My Policies'
+    }}
+  </h2>
+
+  <!-- SUCCESS MESSAGE -->
+  <p class="success" *ngIf="message">{{ message }}</p>
+
+  <!-- EMPTY STATE -->
+  <p class="empty"
+     *ngIf="
+       (view === 'ALL' && !policies.length) ||
+       (view === 'REQUESTED' && !myPolicies.length) ||
+       (view === 'MY' && !approvedPolicies.length)
+     ">
+    No policies found
+  </p>
+
+  <!-- ================= ALL POLICIES ================= -->
+  <div class="policy-list" *ngIf="view === 'ALL'">
+
+    <div class="policy-card" *ngFor="let p of policies">
+
+      <div class="card-header">
+        <h3>{{ p.policyName }}</h3>
+        <span class="type">{{ p.policyType }}</span>
+      </div>
+
+      <div class="card-body">
+        <div class="info">
+          <span>Premium</span>
+          <strong>₹ {{ p.premiumAmount }}</strong>
+        </div>
+
+        <div class="info">
+          <span>Duration</span>
+          <strong>{{ p.duration }} years</strong>
+        </div>
+      </div>
+
+      <p class="description">
+        {{ p.description || 'No description available' }}
+      </p>
+
+      <button
+        class="apply-btn"
+        [disabled]="alreadyApplied(p.policyId)"
+        (click)="applyPolicy(p.policyId)">
+        {{ alreadyApplied(p.policyId) ? 'Applied' : 'Apply Policy' }}
+      </button>
+
+    </div>
+  </div>
+
+  <!-- ================= REQUESTED POLICIES ================= -->
+  <div class="policy-list" *ngIf="view === 'REQUESTED'">
+
+    <ng-container *ngFor="let mp of myPolicies">
+      <div class="policy-card">
+
+        <div class="card-header">
+          <h3>{{ mp.policy.policyName }}</h3>
+          <span
+            class="status"
+            [class.pending]="mp.status === 'PENDING'"
+            [class.rejected]="mp.status === 'REJECTED'">
+            {{ mp.status }}
+          </span>
+        </div>
+
+        <div class="card-body">
+          <div class="info">
+            <span>Premium</span>
+            <strong>₹ {{ mp.policy.premiumAmount }}</strong>
+          </div>
+
+          <div class="info">
+            <span>Duration</span>
+            <strong>{{ mp.policy.duration }} years</strong>
+          </div>
+        </div>
+
+        <p class="description">
+          {{ mp.policy.description || 'No description available' }}
+        </p>
+
+      </div>
+    </ng-container>
+
+  </div>
+
+  <!-- ================= MY POLICIES (APPROVED) ================= -->
+  <div class="policy-list" *ngIf="view === 'MY'">
+
+    <ng-container *ngFor="let mp of approvedPolicies">
+      <div class="policy-card">
+
+        <div class="card-header">
+          <h3>{{ mp.policy.policyName }}</h3>
+          <span class="status approved">APPROVED</span>
+        </div>
+
+        <div class="card-body">
+          <div class="info">
+            <span>Premium</span>
+            <strong>₹ {{ mp.policy.premiumAmount }}</strong>
+          </div>
+
+          <div class="info">
+            <span>Duration</span>
+            <strong>{{ mp.policy.duration }} years</strong>
+          </div>
+        </div>
+
+        <p class="description">
+          {{ mp.policy.description || 'No description available' }}
+        </p>
+
+        <p class="dates">
+          Valid: {{ mp.startDate }} → {{ mp.endDate }}
+        </p>
+
+      </div>
+    </ng-container>
+
+  </div>
+
+</div>

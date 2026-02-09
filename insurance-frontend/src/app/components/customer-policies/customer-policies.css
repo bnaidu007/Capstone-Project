@@ -1,0 +1,137 @@
+/* PAGE */
+.customer-policies-page {
+  padding: 24px;
+  background: #f5f7fb;
+  min-height: 100vh;
+}
+
+/* TITLE */
+.page-title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* EMPTY */
+.empty {
+  text-align: center;
+  color: #777;
+}
+
+/* LIST (STACKED, CENTERED) */
+.policy-list {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* CARD */
+.policy-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* HEADER */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* TYPE BADGE */
+.type {
+  font-size: 11px;
+  font-weight: 600;
+  color: #5f6368;
+  background: #eef1f4;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+/* BODY */
+.card-body {
+  display: flex;
+  gap: 40px;
+  margin: 12px 0;
+}
+
+.info span {
+  font-size: 12px;
+  color: #666;
+}
+
+.info strong {
+  font-size: 14px;
+}
+
+/* DESCRIPTION */
+.description {
+  font-size: 13px;
+  color: #444;
+  margin-bottom: 12px;
+}
+
+/* STATUS BADGES */
+.status {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.status.pending {
+  background: #fff4e5;
+  color: #f29900;
+}
+
+.status.rejected {
+  background: #fdecea;
+  color: #d93025;
+}
+
+.status.approved {
+  background: #e6f4ea;
+  color: #1e8e3e;
+}
+
+/* APPLY BUTTON */
+.apply-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  background: #2d6cdf;
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.apply-btn:disabled {
+  background: #aab4c8;
+  cursor: not-allowed;
+}
+
+/* DATES */
+.dates {
+  font-size: 12px;
+  color: #555;
+}
+
+.success {
+  text-align: center;
+  color: #1e8e3e;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+

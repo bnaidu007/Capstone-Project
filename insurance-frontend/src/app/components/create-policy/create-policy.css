@@ -1,0 +1,129 @@
+.policy-wrapper {
+  min-height: 100vh;
+  background: #f4f7fb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.policy-card {
+  width: 420px;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.policy-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.policy-header .icon {
+  font-size: 30px;
+  margin-right: 12px;
+}
+
+.policy-header h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.policy-header p {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: #666;
+}
+
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #2d6cdf;
+}
+
+.btn-create {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #2d6cdf;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn-create:disabled {
+  background: #aab4c8;
+  cursor: not-allowed;
+}
+
+.msg {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.msg.success {
+  color: #1e8e3e;
+}
+
+.msg.error {
+  color: #d93025;
+}
+/* TOAST */
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #1e8e3e;
+  color: #fff;
+  padding: 14px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  z-index: 1000;
+  animation: slideIn 0.25s ease;
+}
+
+.toast .close {
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+

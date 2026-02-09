@@ -1,0 +1,71 @@
+/* Header */
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: #ffffff;
+}
+
+.admin-header h2 {
+  margin: 0;
+}
+
+/* Logout */
+.logout-btn {
+  background: #ff4d4f;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Navigation cards */
+.admin-nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 40px;
+}
+
+.nav-card {
+  text-decoration: none;
+  color: inherit;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.nav-card h4 {
+  margin-top: 10px;
+}
+
+.nav-card p {
+  color: #777;
+  margin: 6px 0 0;
+}
+
+/* Active route */
+.nav-card.active {
+  border: 2px solid #6366f1;
+}
+
+/* Content area */
+.content {
+  padding: 20px 40px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .admin-nav {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,100 @@
+.admin-page {
+  padding: 20px;
+  background: #f5f7fb;
+  min-height: 100vh;
+}
+
+/* Page title */
+.page-title {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+/* Search box */
+.search-box {
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  margin: 0 auto 20px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* Status texts */
+.loading,
+.error,
+.empty {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.error {
+  color: #d93025;
+}
+
+.empty {
+  color: #666;
+}
+
+/* 🔥 THIS IS THE MAIN FIX */
+.customer-list {
+  max-width: 700px;         
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;   
+  gap: 16px;
+}
+
+/* Customer card */
+.customer-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Card header */
+.customer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.customer-header h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.cid {
+  font-size: 12px;
+  color: #777;
+}
+
+/* Customer info */
+.customer-info p {
+  margin: 4px 0;
+  font-size: 13px;
+  color: #444;
+}
+/* Policy ID & Customer ID badge */
+.policy-id,
+.cid {
+  font-size: 11px;
+  font-weight: 600;
+  color: #2d6cdf;
+  background: #eef3ff;
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+/* Optional: subtle hover polish */
+.policy-card:hover .policy-id,
+.customer-card:hover .cid {
+  background: #e0eaff;
+}

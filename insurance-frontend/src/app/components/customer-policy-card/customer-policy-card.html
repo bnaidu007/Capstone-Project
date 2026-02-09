@@ -1,0 +1,11 @@
+<div class="policy-card">
+  <h4>{{ policy.policyName }}</h4>
+  <p>Premium: ₹{{ policy.premiumAmount }}</p>
+  <p>Duration: {{ policy.duration }} years</p>
+
+  <button
+    (click)="applyPolicy()"
+    [disabled]="applied">
+    {{ applied ? 'Applied' : 'Apply' }}
+  </button>
+</div>

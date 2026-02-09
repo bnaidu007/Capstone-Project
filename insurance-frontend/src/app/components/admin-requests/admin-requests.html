@@ -1,0 +1,57 @@
+<div class="admin-page">
+
+  <h2 class="page-title">Pending Requests</h2>
+
+  <!-- ✅ SUCCESS MESSAGE -->
+  <p class="success" *ngIf="message">{{ message }}</p>
+
+  <!-- STATUS -->
+  <p class="loading" *ngIf="loading">Loading requests...</p>
+  <p class="error" *ngIf="error">{{ error }}</p>
+
+  <!-- REQUEST LIST -->
+  <div class="request-list" *ngIf="!loading && requests.length">
+
+    <div class="request-card" *ngFor="let r of requests">
+
+      <div class="request-header">
+        <h3>{{ r.policy.policyName }}</h3>
+        <span class="request-id">
+          REQUEST · CUSTOMER ID #{{ r.customer.customerId }}
+        </span>
+      </div>
+
+      <div class="request-details">
+        <p><b>Customer:</b> {{ r.customer.name }}</p>
+        <p><b>Username:</b> {{ r.customer.username }}</p>
+        <p><b>Premium:</b> ₹ {{ r.policy.premiumAmount }}</p>
+        <p><b>Duration:</b> {{ r.policy.duration }} years</p>
+      </div>
+
+      <div class="actions">
+        <button
+          class="approve"
+          [disabled]="processingIds.has(r.customerPolicyId)"
+          (click)="approve(r.customerPolicyId)">
+          Approve
+        </button>
+
+        <button
+          class="reject"
+          [disabled]="processingIds.has(r.customerPolicyId)"
+          (click)="reject(r.customerPolicyId)">
+          Reject
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <p
+    class="empty"
+    *ngIf="!loading && !requests.length && !message">
+    No pending requests
+  </p>
+
+</div>

@@ -1,0 +1,56 @@
+<div class="login-page">
+  <div class="login-box">
+
+    <!-- LOGO -->
+    <div class="logo">
+      <div class="logo-text">
+        <span class="sub">Insurance Policy Management System</span>
+      </div>
+    </div>
+
+    <!-- TITLE -->
+    <h2>Welcome Back!</h2>
+    <p class="subtitle">Log in to access your dashboard.</p>
+
+    <!-- FORM -->
+    <form (ngSubmit)="login()">
+
+      <!-- USERNAME / MOBILE -->
+      <div class="input-box">
+        <span class="icon">👤</span>
+        <input
+          type="text"
+          placeholder="username"
+          [(ngModel)]="username"
+          name="username"
+          required
+        />
+      </div>
+
+      <!-- PASSWORD -->
+      <div class="input-box">
+        <span class="icon">🔒</span>
+        <input
+          type="password"
+          placeholder="Password"
+          [(ngModel)]="password"
+          name="password"
+          required
+        />
+      </div>
+
+      <!-- LOGIN BUTTON -->
+      <button type="submit" [disabled]="loading">
+        {{ loading ? 'Logging in...' : 'Login' }}
+      </button>
+
+    </form>
+
+    <!-- REGISTER -->
+    <p class="register">
+      Don’t have an account?
+      <a (click)="goToRegister()">Register Now</a>
+    </p>
+
+  </div>
+</div>

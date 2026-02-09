@@ -1,0 +1,29 @@
+<div class="card shadow p-3">
+  <h4 class="mb-3">All Policies</h4>
+
+  <table class="table table-bordered table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Premium</th>
+        <th>Duration</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let policy of policies">
+        <td>{{ policy.id }}</td>
+        <td>{{ policy.policyName }}</td>
+        <td>{{ policy.policyType }}</td>
+        <td>{{ policy.premiumAmount }}</td>
+        <td>{{ policy.duration }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="policies.length === 0" class="text-center">
+    No policies found
+  </p>
+</div>

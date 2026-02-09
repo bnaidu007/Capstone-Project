@@ -1,0 +1,39 @@
+<!-- HEADER -->
+<div class="admin-header">
+  <h2>Admin Dashboard</h2>
+  <button class="logout-btn" (click)="logout()">Logout</button>
+</div>
+
+<!-- DASHBOARD CARDS -->
+<div class="admin-nav">
+
+  <div class="nav-card" (click)="open('CREATE')">
+    📝
+    <h4>Create Policy</h4>
+    <p>Add new insurance policy</p>
+  </div>
+
+  <div class="nav-card" (click)="open('POLICIES')">
+    📄
+    <h4>Policies</h4>
+    <p>View all policies</p>
+  </div>
+
+  <div class="nav-card" (click)="open('REQUESTS')">
+    ⏳
+    <h4>Requests</h4>
+    <p>Pending approvals</p>
+  </div>
+
+  <div class="nav-card" (click)="open('CUSTOMERS')">
+    👥
+    <h4>Customers</h4>
+    <p>View all customers</p>
+  </div>
+
+</div>
+
+<!-- CONTENT (ONLY AFTER CLICK) -->
+<div class="content" *ngIf="activeView !== 'NONE'">
+  <router-outlet></router-outlet>
+</div>

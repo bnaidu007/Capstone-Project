@@ -1,0 +1,88 @@
+.request-list {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.request-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.request-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.request-header h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.request-id {
+  font-size: 12px;
+  color: #777;
+}
+
+.request-details p {
+  margin: 4px 0;
+  font-size: 13px;
+  color: #444;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.actions button {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.actions .approve {
+  background: #1e8e3e;
+  color: #fff;
+}
+
+.actions .reject {
+  background: #d93025;
+  color: #fff;
+}
+/* Request / Customer ID badge */
+.request-id {
+  font-size: 11px;
+  font-weight: 600;
+  color: #2d6cdf;
+  background: #eef3ff;
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+/* Optional hover polish */
+.request-card:hover .request-id {
+  background: #e0eaff;
+}
+.success {
+  text-align: center;
+  color: #1e8e3e;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.error {
+  text-align: center;
+  color: #d93025;
+}
